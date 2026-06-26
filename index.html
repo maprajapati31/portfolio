@@ -91,6 +91,21 @@
     height: 28px;
     opacity: 0.55;
   }
+  .hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+  .hero-text { flex: 1; }
+  .hero-photo {
+    flex-shrink: 0;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid var(--copper-light);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  }
   .hero-bio {
     font-size: 18px; font-weight: 300; color: var(--ink-mid);
     max-width: 560px; line-height: 1.75; margin-bottom: 2.5rem;
@@ -262,6 +277,8 @@
     .nav-links { display: none; }
     section { padding: 70px 6vw; }
     #hero { padding-top: 110px; min-height: auto; }
+    .hero-inner { flex-direction: column-reverse; gap: 2rem; }
+    .hero-photo { width: 140px; height: 140px; }
   }
 </style>
 </head>
@@ -282,18 +299,20 @@
 <!-- HERO -->
 <section id="hero">
   <div class="container">
-    <p class="hero-eyebrow">RF · RFIC · Hardware Engineering</p>
-    <h1 class="hero-name">Meera<br/>Prajapati</h1>
-
-    <!-- Signature: RF sine waveform -->
-    <svg class="waveform" viewBox="0 0 200 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 14 Q12 2 24 14 Q36 26 48 14 Q60 2 72 14 Q84 26 96 14 Q108 2 120 14 Q132 26 144 14 Q156 2 168 14 Q180 26 192 14 L200 14"
-        stroke="#C07D3A" stroke-width="1.5" stroke-linecap="round"/>
-    </svg>
-
-    <p class="hero-bio">
-      BTech graduate in ICT with a minor in Robotics, specialising in RF circuit design, EM simulation, and Cadence Virtuoso-based layout and verification. Three peer-reviewed publications at IEEE MAPCON and IEEE WAMS 2025.
-    </p>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-eyebrow">RF · RFIC · Hardware Engineering</p>
+        <h1 class="hero-name">Meera<br/>Prajapati</h1>
+        <svg class="waveform" viewBox="0 0 200 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 14 Q12 2 24 14 Q36 26 48 14 Q60 2 72 14 Q84 26 96 14 Q108 2 120 14 Q132 26 144 14 Q156 2 168 14 Q180 26 192 14 L200 14"
+            stroke="#C07D3A" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <p class="hero-bio">
+          BTech graduate in ICT with a minor in Robotics, specialising in RF circuit design, EM simulation, and Cadence Virtuoso-based layout and verification. Three peer-reviewed publications at IEEE MAPCON and IEEE WAMS 2025.
+        </p>
+      </div>
+      <img class="hero-photo" src="photo.jpg" alt="Meera Prajapati"/>
+    </div>
   </div>
 </section>
 
