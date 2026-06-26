@@ -205,6 +205,32 @@
     width: 6px; height: 6px; border-radius: 50%;
     background: var(--copper);
   }
+  /* Indented text — no bullet */
+  .tl-indent {
+    font-size: 14.5px; color: var(--ink-mid); line-height: 1.7;
+    padding: 4px 0 4px 20px;
+  }
+  /* Achievement bullets */
+  .achievement-list { list-style: none; }
+  .achievement-list li {
+    padding: 10px 0 10px 20px; position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  .achievement-list li:first-child { border-top: 1px solid var(--border); }
+  .achievement-list li::before {
+    content: '';
+    position: absolute; left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--copper);
+  }
+  .achievement-title {
+    font-size: 15px; font-weight: 500; color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .achievement-sub {
+    font-size: 13px; color: var(--ink-light);
+  }
 
   /* PROJECTS GRID */
   .projects-grid {
@@ -365,8 +391,8 @@
         <p class="tl-period">2022 – May 2026</p>
         <p class="tl-role">Bachelor of Technology in Information and Communication Technology</p>
         <p class="tl-org">Pandit Deendayal Energy University (PDEU) · Gandhinagar</p>
+        <p class="tl-indent">Minor in Robotics · CGPA 9.0 / 10</p>
         <ul class="tl-bullets">
-          <li>Minor in Robotics · CGPA 9.0 / 10</li>
           <li>Relevant coursework: Digital Logic Design, Analog Circuit Design, Radio Frequency Engineering, Microprocessor & Embedded Systems, Digital Signal Processing, Computer Organization & Design, Deep Reinforcement Learning, Mechanics of Robotics.</li>
         </ul>
       </div>
@@ -497,53 +523,41 @@
         <p class="tl-period">Apr 2024 – Jun 2025</p>
         <p class="tl-role">Chair</p>
         <p class="tl-org">IEEE Computer Society Student Branch Chapter, PDEU</p>
-        <ul class="tl-bullets">
-          <li>Led the chapter's technical and community initiatives, organising events, workshops, and outreach activities for the student engineering community.</li>
-        </ul>
+        <p class="tl-indent">Led the chapter's technical and community initiatives, organising events, workshops, and outreach activities for the student engineering community.</p>
       </div>
 
       <div class="timeline-item fade-in">
         <p class="tl-period">Jul 2024 – Jun 2025</p>
         <p class="tl-role">Technical Head</p>
         <p class="tl-org">CRETUS – Robotics & Automation Club, PDEU</p>
-        <ul class="tl-bullets">
-          <li>Drove technical projects and mentored junior members in robotics and embedded systems at the university's robotics and automation club.</li>
-        </ul>
+        <p class="tl-indent">Drove technical projects and mentored junior members in robotics and embedded systems at the university's robotics and automation club.</p>
       </div>
 
       <div class="timeline-item fade-in">
         <p class="tl-period">Aug 2023 – Jul 2024</p>
         <p class="tl-role">Treasurer</p>
         <p class="tl-org">IEEE Computational Intelligence Society Student Branch, PDEU</p>
-        <ul class="tl-bullets">
-          <li>Managed chapter finances and supported organisational activities for the IEEE CIS student branch at PDEU.</li>
-        </ul>
+        <p class="tl-indent">Managed chapter finances and supported organisational activities for the IEEE CIS student branch at PDEU.</p>
       </div>
      
     </div>
 
     <!-- Subsection: Achievements -->
     <p class="section-label" style="margin-top:3rem; margin-bottom:1.25rem;">Achievements & Certifications</p>
-    <div class="pub-list">
-      <div class="pub-item fade-in" style="grid-template-columns: 1fr;">
-        <div>
-          <p class="pub-title" style="font-size:15px;">Top 10 — NASA Space Apps Hackathon Regional Round</p>
-          <p class="pub-authors">Qualified and placed in top 10 out of 90+ teams, two consecutive years.</p>
-        </div>
-      </div>
-      <div class="pub-item fade-in" style="grid-template-columns: 1fr;">
-        <div>
-          <p class="pub-title" style="font-size:15px;">ISWDP IISc Samsung Fellowship — Cohort 7</p>
-          <p class="pub-authors">Recipient of the fellowship recognising excellence in semiconductor and hardware research.</p>
-        </div>
-      </div>
-      <div class="pub-item fade-in" style="grid-template-columns: 1fr;">
-        <div>
-          <p class="pub-title" style="font-size:15px;">Micron University Semiconductor Awareness Program</p>
-          <p class="pub-authors">Successfully completed the programme on semiconductor fundamentals and industry practices.</p>
-        </div>
-      </div>
-    </div>
+    <ul class="achievement-list">
+      <li class="fade-in">
+        <p class="achievement-title">Top 10 — NASA Space Apps Hackathon Regional Round</p>
+        <p class="achievement-sub">Qualified and placed in top 10 out of 90+ teams, two consecutive years.</p>
+      </li>
+      <li class="fade-in">
+        <p class="achievement-title">ISWDP IISc Samsung Fellowship — Cohort 7</p>
+        <p class="achievement-sub">Recipient of the fellowship recognising excellence in semiconductor and hardware research.</p>
+      </li>
+      <li class="fade-in">
+        <p class="achievement-title">Micron University Semiconductor Awareness Program</p>
+        <p class="achievement-sub">Successfully completed the programme on semiconductor fundamentals and industry practices.</p>
+      </li>
+    </ul>
 
   </div>
 </section>
