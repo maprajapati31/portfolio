@@ -206,6 +206,29 @@
     background: var(--copper);
   }
   /* Indented text — no bullet */
+  /* CLUB GROUP */
+  .club-group { margin-bottom: 2.5rem; }
+  .club-name {
+    font-size: 17px; font-weight: 500; color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .club-meta {
+    font-size: 12px; color: var(--ink-light);
+    text-transform: uppercase; letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+  .position-list { list-style: none; border-left: 1px solid var(--border); margin-left: 8px; }
+  .position-item { padding: 0.6rem 0 0.6rem 1.25rem; position: relative; }
+  .position-item::before {
+    content: '';
+    position: absolute; left: -4px; top: 1.05rem;
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--white); border: 1.5px solid var(--copper);
+  }
+  .pos-title { font-size: 14px; font-weight: 500; color: var(--ink); }
+  .pos-period { font-size: 12px; color: var(--ink-light); margin-bottom: 3px; }
+  .pos-desc { font-size: 13.5px; color: var(--ink-mid); line-height: 1.6; margin-top: 3px; }
+
   .tl-indent {
     font-size: 14.5px; color: var(--ink-mid); line-height: 1.7;
     padding: 4px 0 4px 20px;
@@ -344,10 +367,10 @@
   .tooltip {
     position: relative;
     color: inherit;
-    cursor: help;
+    cursor: pointer;
   }
   .tooltip:hover {
-    border-bottom: 1px dotted var(--ink-light);
+    border-bottom: none;
   }
   .tooltip .tooltip-box {
     visibility: hidden;
@@ -577,80 +600,91 @@
     <h2 class="section-title">Beyond the Lab</h2>
 
     <!-- Subsection: Positions of Responsibility -->
-    <p class="section-label" style="margin-bottom:1.25rem;">Positions of Responsibility</p>
-    <div class="timeline">
+    <p class="section-label" style="margin-bottom:1.5rem;">Positions of Responsibility</p>
 
+    <div class="club-group fade-in">
+      <p class="club-name">IEEE Computer Society Student Branch Chapter, PDEU</p>
+      <p class="club-meta">Dec 2022 – Jun 2025 · 2 yrs 7 mos</p>
+      <ul class="position-list">
+        <li class="position-item">
+          <p class="pos-title">Chair</p>
+          <p class="pos-period">Apr 2024 – Jun 2025 · 1 yr 3 mos</p>
+          <p class="pos-desc">Led the chapter's technical and community initiatives, organising events, workshops, and outreach activities for the student engineering community.</p>
+        </li>
+        <li class="position-item">
+          <p class="pos-title">General Secretary</p>
+          <p class="pos-period">Jul 2023 – Apr 2024 · 10 mos</p>
+          <p class="pos-desc">Managed chapter operations, coordinated between members and faculty advisors, and supported event planning and administrative activities.</p>
+        </li>
+        <li class="position-item">
+          <p class="pos-title">Operating Committee Member</p>
+          <p class="pos-period">Dec 2022 – Jul 2023 · 8 mos</p>
+          <p class="pos-desc">Contributed to chapter operations and supported the planning and execution of technical events and initiatives.</p>
+        </li>
+      </ul>
+    </div>
 
-      <div class="timeline-item fade-in">
-        <p class="tl-period">Apr 2024 – Jun 2025 · 1 yr 3 mos</p>
-        <p class="tl-role">Chair</p>
-        <p class="tl-org">IEEE Computer Society Student Branch Chapter, PDEU</p>
-        <p class="tl-indent">Led the chapter's technical and community initiatives, organising events, workshops, and outreach activities for the student engineering community.</p>
-      </div>
+    <div class="club-group fade-in">
+      <p class="club-name">CRETUS – Robotics & Automation Club, PDEU</p>
+      <p class="club-meta">Aug 2023 – Jun 2025 · 1 yr 11 mos</p>
+      <ul class="position-list">
+        <li class="position-item">
+          <p class="pos-title">Technical Team Lead</p>
+          <p class="pos-period">Jul 2024 – Jun 2025 · 1 yr</p>
+          <p class="pos-desc">Led the technical team, drove robotics and automation projects, and mentored junior members in embedded systems and hardware development.</p>
+        </li>
+        <li class="position-item">
+          <p class="pos-title">Technical Team Member</p>
+          <p class="pos-period">Aug 2023 – Jul 2024 · 1 yr</p>
+          <p class="pos-desc">Participated in robotics projects and club activities, contributing to hardware design and embedded systems work.</p>
+        </li>
+      </ul>
+    </div>
 
-      <div class="timeline-item fade-in">
-        <p class="tl-period">Jul 2023 – Apr 2024 · 10 mos</p>
-        <p class="tl-role">General Secretary</p>
-        <p class="tl-org">IEEE Computer Society Student Branch Chapter, PDEU</p>
-        <p class="tl-indent">Managed chapter operations, coordinated between members and faculty advisors, and supported event planning and administrative activities.</p>
-      </div>
+    <div class="club-group fade-in">
+      <p class="club-name">IEEE Computational Intelligence Society Student Branch, PDEU</p>
+      <p class="club-meta">Aug 2023 – Jul 2024 · 1 yr</p>
+      <ul class="position-list">
+        <li class="position-item">
+          <p class="pos-title">Treasurer</p>
+          <p class="pos-period">Aug 2023 – Jul 2024 · 1 yr</p>
+          <p class="pos-desc">Managed chapter finances and supported organisational activities for the IEEE CIS student branch at PDEU.</p>
+        </li>
+      </ul>
+    </div>
 
-      <div class="timeline-item fade-in">
-        <p class="tl-period">Dec 2022 – Jul 2023 · 8 mos</p>
-        <p class="tl-role">Operating Committee Member</p>
-        <p class="tl-org">IEEE Computer Society Student Branch Chapter, PDEU</p>
-        <p class="tl-indent">Contributed to chapter operations and supported the planning and execution of technical events and initiatives.</p>
-      </div>
+    <div class="club-group fade-in">
+      <p class="club-name">GROW PDEU</p>
+      <p class="club-meta">Aug 2022 – Jun 2024 · 1 yr 11 mos</p>
+      <ul class="position-list">
+        <li class="position-item">
+          <p class="pos-title">Committee Head</p>
+          <p class="pos-period">Jul 2023 – Jun 2024 · 1 yr</p>
+          <p class="pos-desc">Headed a committee within GROW PDEU, coordinating student-led initiatives and community engagement activities.</p>
+        </li>
+        <li class="position-item">
+          <p class="pos-title">Subcommittee Member</p>
+          <p class="pos-period">Aug 2022 – Jul 2023 · 1 yr</p>
+          <p class="pos-desc">Supported subcommittee activities and contributed to student community programmes at PDEU.</p>
+        </li>
+      </ul>
+    </div>
 
-      <div class="timeline-item fade-in">
-        <p class="tl-period">Jul 2024 – Jun 2025 · 1 yr</p>
-        <p class="tl-role">Technical Team Lead</p>
-        <p class="tl-org">CRETUS – Robotics & Automation Club, PDEU</p>
-        <p class="tl-indent">Led the technical team, drove robotics and automation projects, and mentored junior members in embedded systems and hardware development.</p>
-      </div>
-
-      <div class="timeline-item fade-in">
-        <p class="tl-period">Aug 2023 – Jul 2024 · 1 yr</p>
-        <p class="tl-role">Technical Team Member</p>
-        <p class="tl-org">CRETUS – Robotics & Automation Club, PDEU</p>
-        <p class="tl-indent">Participated in robotics projects and club activities, contributing to hardware design and embedded systems work.</p>
-      </div>
-
-      <div class="timeline-item fade-in">
-        <p class="tl-period">Aug 2023 – Jul 2024 · 1 yr</p>
-        <p class="tl-role">Treasurer</p>
-        <p class="tl-org">IEEE Computational Intelligence Society Student Branch, PDEU</p>
-        <p class="tl-indent">Managed chapter finances and supported organisational activities for the IEEE CIS student branch at PDEU.</p>
-      </div>
-
-      <div class="timeline-item fade-in">
-        <p class="tl-period">Jul 2023 – Jun 2024 · 1 yr</p>
-        <p class="tl-role">Committee Head</p>
-        <p class="tl-org">GROW PDEU</p>
-        <p class="tl-indent">Headed a committee within GROW PDEU, coordinating student-led initiatives and community engagement activities.</p>
-      </div>
-
-      <div class="timeline-item fade-in">
-        <p class="tl-period">Aug 2022 – Jul 2023 · 1 yr</p>
-        <p class="tl-role">Subcommittee Member</p>
-        <p class="tl-org">GROW PDEU</p>
-        <p class="tl-indent">Supported subcommittee activities and contributed to student community programmes at PDEU.</p>
-      </div>
-
-      <div class="timeline-item fade-in">
-        <p class="tl-period">Jun 2023 – Dec 2023 · 7 mos</p>
-        <p class="tl-role">PR Team Lead</p>
-        <p class="tl-org">The Network Club, PDEU</p>
-        <p class="tl-indent">Led public relations and outreach efforts, managing communications and promoting club events to the student body.</p>
-      </div>
-
-      <div class="timeline-item fade-in">
-        <p class="tl-period">Dec 2022 – Dec 2023 · 1 yr 1 mo</p>
-        <p class="tl-role">PR Team Member</p>
-        <p class="tl-org">The Network Club, PDEU</p>
-        <p class="tl-indent">Contributed to the PR team's outreach and communications efforts for club events and initiatives.</p>
-      </div>
-     
+    <div class="club-group fade-in">
+      <p class="club-name">The Network Club, PDEU</p>
+      <p class="club-meta">Dec 2022 – Dec 2023 · 1 yr 1 mo</p>
+      <ul class="position-list">
+        <li class="position-item">
+          <p class="pos-title">PR Team Lead</p>
+          <p class="pos-period">Jun 2023 – Dec 2023 · 7 mos</p>
+          <p class="pos-desc">Led public relations and outreach efforts, managing communications and promoting club events to the student body.</p>
+        </li>
+        <li class="position-item">
+          <p class="pos-title">PR Team Member</p>
+          <p class="pos-period">Dec 2022 – Dec 2023 · 1 yr 1 mo</p>
+          <p class="pos-desc">Contributed to the PR team's outreach and communications efforts for club events and initiatives.</p>
+        </li>
+      </ul>
     </div>
 
     <!-- Subsection: Achievements -->
