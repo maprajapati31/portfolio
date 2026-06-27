@@ -318,6 +318,48 @@
 
   .pub-title a:hover { text-decoration: underline; color: var(--copper); }
 
+  /* TOOLTIP */
+  .tooltip {
+    position: relative;
+    color: inherit;
+    cursor: help;
+  }
+  .tooltip:hover {
+    border-bottom: 1px dotted var(--ink-light);
+  }
+  .tooltip .tooltip-box {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--ink);
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 300;
+    line-height: 1.6;
+    padding: 10px 14px;
+    border-radius: 6px;
+    width: 240px;
+    text-align: left;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 200;
+  }
+  .tooltip .tooltip-box::after {
+    content: '';
+    position: absolute;
+    top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--ink);
+  }
+  .tooltip:hover .tooltip-box {
+    visibility: visible;
+    opacity: 1;
+  }
+
   /* FADE IN */
   .fade-in {
     opacity: 0; transform: translateY(18px);
@@ -389,7 +431,7 @@
     <div class="timeline">
       <div class="timeline-item fade-in">
         <p class="tl-period">2022 – May 2026</p>
-        <p class="tl-role">Bachelor of Technology in Information and Communication Technology</p>
+        <p class="tl-role">Bachelor of Technology in <span class="tooltip">Information and Communication Technology<span class="tooltip-box">An interdisciplinary programme combining core Electronics & Communication Engineering with Computer Science — covering circuits, signals, RF, networks, embedded systems, algorithms, and software.</span></span></p>
         <p class="tl-org">Pandit Deendayal Energy University (PDEU) · Gandhinagar</p>
         <p class="tl-indent">Minor in Robotics · CGPA 9.0 / 10</p>
         <p class="tl-indent">Relevant coursework: Digital Logic Design, Analog Circuit Design, Radio Frequency Engineering, Microprocessor & Embedded Systems, Digital Signal Processing, Computer Organization & Design, Deep Reinforcement Learning, Mechanics of Robotics.</p>
