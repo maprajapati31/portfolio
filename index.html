@@ -318,6 +318,28 @@
 
   .pub-title a:hover { text-decoration: underline; color: var(--copper); }
 
+  /* SQUIGGLY UNDERLINE */
+  .squiggle-wrap {
+    position: relative;
+    display: inline;
+  }
+  .squiggle-wrap svg {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    overflow: visible;
+    pointer-events: none;
+  }
+  .squiggle-wrap svg path {
+    fill: none;
+    stroke: url(#glitter-gradient);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
   /* TOOLTIP */
   .tooltip {
     position: relative;
@@ -431,7 +453,7 @@
     <div class="timeline">
       <div class="timeline-item fade-in">
         <p class="tl-period">2022 – 2026</p>
-        <p class="tl-role">Bachelor of Technology in <span class="tooltip">Information and Communication Technology<span class="tooltip-box">An interdisciplinary programme combining core Electronics & Communication Engineering with Computer Science — covering circuits, signals, RF, networks, embedded systems, algorithms, and software.</span></span></p>
+        <p class="tl-role">Bachelor of Technology in <span class="squiggle-wrap">Information and Communication Technology<span class="tooltip" style="position:absolute;inset:0;"><span class="tooltip-box">An interdisciplinary programme combining core Electronics & Communication Engineering with Computer Science — covering circuits, signals, RF, networks, embedded systems, algorithms, and software.</span></span><svg viewBox="0 0 340 8" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><defs><linearGradient id="glitter-gradient" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F472B6"/><stop offset="25%" stop-color="#EC4899"/><stop offset="50%" stop-color="#F9A8D4"/><stop offset="75%" stop-color="#DB2777"/><stop offset="100%" stop-color="#F472B6"/></linearGradient></defs><path d="M0 5 Q10 1 20 5 Q30 9 40 5 Q50 1 60 5 Q70 9 80 5 Q90 1 100 5 Q110 9 120 5 Q130 1 140 5 Q150 9 160 5 Q170 1 180 5 Q190 9 200 5 Q210 1 220 5 Q230 9 240 5 Q250 1 260 5 Q270 9 280 5 Q290 1 300 5 Q310 9 320 5 Q330 1 340 5"/></svg></span></p>
         <p class="tl-org">Pandit Deendayal Energy University (PDEU) · Gandhinagar, India</p>
         <p class="tl-indent">Minor in Robotics · CGPA 9.0 / 10</p>
         <p class="tl-indent">Relevant coursework: Radio Frequency Engineering, Analog Circuit Design, Digital CMOS VLSI Design, Digital Logic Design, Computer Organization & Design, Microprocessor & Embedded Systems, Internet of Things, Digital Signal Processing, Deep Reinforcement Learning, Software Engineering & Project Management, Mechanics of Robotics.</p>
@@ -560,24 +582,73 @@
 
 
       <div class="timeline-item fade-in">
-        <p class="tl-period">Apr 2024 – Jun 2025</p>
+        <p class="tl-period">Apr 2024 – Jun 2025 · 1 yr 3 mos</p>
         <p class="tl-role">Chair</p>
         <p class="tl-org">IEEE Computer Society Student Branch Chapter, PDEU</p>
         <p class="tl-indent">Led the chapter's technical and community initiatives, organising events, workshops, and outreach activities for the student engineering community.</p>
       </div>
 
       <div class="timeline-item fade-in">
-        <p class="tl-period">Jul 2024 – Jun 2025</p>
-        <p class="tl-role">Technical Head</p>
-        <p class="tl-org">CRETUS – Robotics & Automation Club, PDEU</p>
-        <p class="tl-indent">Drove technical projects and mentored junior members in robotics and embedded systems at the university's robotics and automation club.</p>
+        <p class="tl-period">Jul 2023 – Apr 2024 · 10 mos</p>
+        <p class="tl-role">General Secretary</p>
+        <p class="tl-org">IEEE Computer Society Student Branch Chapter, PDEU</p>
+        <p class="tl-indent">Managed chapter operations, coordinated between members and faculty advisors, and supported event planning and administrative activities.</p>
       </div>
 
       <div class="timeline-item fade-in">
-        <p class="tl-period">Aug 2023 – Jul 2024</p>
+        <p class="tl-period">Dec 2022 – Jul 2023 · 8 mos</p>
+        <p class="tl-role">Operating Committee Member</p>
+        <p class="tl-org">IEEE Computer Society Student Branch Chapter, PDEU</p>
+        <p class="tl-indent">Contributed to chapter operations and supported the planning and execution of technical events and initiatives.</p>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <p class="tl-period">Jul 2024 – Jun 2025 · 1 yr</p>
+        <p class="tl-role">Technical Team Lead</p>
+        <p class="tl-org">CRETUS – Robotics & Automation Club, PDEU</p>
+        <p class="tl-indent">Led the technical team, drove robotics and automation projects, and mentored junior members in embedded systems and hardware development.</p>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <p class="tl-period">Aug 2023 – Jul 2024 · 1 yr</p>
+        <p class="tl-role">Technical Team Member</p>
+        <p class="tl-org">CRETUS – Robotics & Automation Club, PDEU</p>
+        <p class="tl-indent">Participated in robotics projects and club activities, contributing to hardware design and embedded systems work.</p>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <p class="tl-period">Aug 2023 – Jul 2024 · 1 yr</p>
         <p class="tl-role">Treasurer</p>
         <p class="tl-org">IEEE Computational Intelligence Society Student Branch, PDEU</p>
         <p class="tl-indent">Managed chapter finances and supported organisational activities for the IEEE CIS student branch at PDEU.</p>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <p class="tl-period">Jul 2023 – Jun 2024 · 1 yr</p>
+        <p class="tl-role">Committee Head</p>
+        <p class="tl-org">GROW PDEU</p>
+        <p class="tl-indent">Headed a committee within GROW PDEU, coordinating student-led initiatives and community engagement activities.</p>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <p class="tl-period">Aug 2022 – Jul 2023 · 1 yr</p>
+        <p class="tl-role">Subcommittee Member</p>
+        <p class="tl-org">GROW PDEU</p>
+        <p class="tl-indent">Supported subcommittee activities and contributed to student community programmes at PDEU.</p>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <p class="tl-period">Jun 2023 – Dec 2023 · 7 mos</p>
+        <p class="tl-role">PR Team Lead</p>
+        <p class="tl-org">The Network Club, PDEU</p>
+        <p class="tl-indent">Led public relations and outreach efforts, managing communications and promoting club events to the student body.</p>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <p class="tl-period">Dec 2022 – Dec 2023 · 1 yr 1 mo</p>
+        <p class="tl-role">PR Team Member</p>
+        <p class="tl-org">The Network Club, PDEU</p>
+        <p class="tl-indent">Contributed to the PR team's outreach and communications efforts for club events and initiatives.</p>
       </div>
      
     </div>
