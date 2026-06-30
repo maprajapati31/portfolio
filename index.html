@@ -12,7 +12,7 @@
     --copper: #C07D3A; --copper-light: #F0E4D4; --border: #E8E4DF;
     --serif: 'DM Serif Display', Georgia, serif; --sans: 'Inter', system-ui, sans-serif;
   }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
   body { font-family: var(--sans); background: var(--white); color: var(--ink); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 0 5vw; height: 60px; display: flex; align-items: center; justify-content: space-between; }
   .nav-name { font-family: var(--serif); font-size: 17px; color: var(--ink); text-decoration: none; letter-spacing: 0.01em; white-space: nowrap; }
@@ -27,20 +27,17 @@
     gap: 5px;
     width: 28px; height: 28px;
     background: none; border: none;
-    cursor: pointer;
-    padding: 0;
+    cursor: pointer; padding: 0;
+    z-index: 101;
   }
   .nav-burger span {
-    display: block;
-    width: 100%; height: 2px;
-    background: var(--ink);
-    border-radius: 2px;
+    display: block; width: 100%; height: 2px;
+    background: var(--ink); border-radius: 2px;
     transition: transform 0.25s ease, opacity 0.25s ease;
   }
   .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-burger.open span:nth-child(2) { opacity: 0; }
   .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
   .nav-mobile-panel {
     display: none;
     position: fixed;
@@ -48,7 +45,7 @@
     background: var(--white);
     border-bottom: 1px solid var(--border);
     list-style: none;
-    z-index: 99;
+    z-index: 100;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
@@ -56,12 +53,12 @@
   .nav-mobile-panel.open { max-height: 400px; }
   .nav-mobile-panel li { border-bottom: 0.5px solid var(--border); }
   .nav-mobile-panel a {
-    display: block;
-    padding: 14px 6vw;
+    display: block; padding: 14px 6vw;
     font-size: 14px; font-weight: 500; color: var(--ink-mid);
     text-decoration: none; letter-spacing: 0.03em;
   }
   .nav-mobile-panel a:active { color: var(--copper); }
+
   section { padding: 100px 5vw; }
   section:nth-child(even) { background: var(--off); }
   .container { max-width: 780px; margin: 0 auto; }
@@ -142,12 +139,12 @@
 
   .tooltip { position: relative; color: inherit; cursor: pointer; }
   .tooltip:hover { border-bottom: none; }
-  .tooltip .tooltip-box { visibility: hidden; opacity: 0; position: absolute; bottom: calc(100% + 10px); left: 0; transform: none; background: var(--ink); color: #fff; font-size: 12.5px; font-weight: 300; line-height: 1.6; padding: 10px 14px; border-radius: 6px; width: min(240px, 70vw); text-align: left; pointer-events: none; transition: opacity 0.2s ease; z-index: 200; }
+  .tooltip .tooltip-box { visibility: hidden; opacity: 0; position: absolute; bottom: calc(100% + 10px); right: 0; left: auto; background: var(--ink); color: #fff; font-size: 12.5px; font-weight: 300; line-height: 1.6; padding: 10px 14px; border-radius: 6px; width: 200px; text-align: left; pointer-events: none; transition: opacity 0.2s ease; z-index: 200; }
   .tooltip .tooltip-box::after { content: ''; position: absolute; top: 100%; left: 20px; border: 6px solid transparent; border-top-color: var(--ink); }
   .tooltip:hover .tooltip-box { visibility: visible; opacity: 1; }
   .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .fade-in.visible { opacity: 1; transform: none; }
-  @media (max-width: 600px) { .projects-grid { grid-template-columns: 1fr; } .nav-links { display: none; } .nav-burger { display: flex; } .nav-mobile-panel { display: block; } section { padding: 70px 6vw; } #hero { padding-top: 110px; min-height: auto; } .hero-inner { flex-direction: column-reverse; gap: 1.5rem; } .hero-photos { width: 200px; height: 220px; } .hero-photo { width: 105px; height: 105px; } #education .tl-role { font-size: 15px; } }
+  @media (max-width: 600px) { .projects-grid { grid-template-columns: 1fr; } .nav-links { display: none; } .nav-burger { display: flex; } .nav-mobile-panel { display: block; } section { padding: 70px 6vw; } #hero { padding-top: 110px; min-height: auto; } .hero-inner { flex-direction: column-reverse; gap: 1.5rem; } .hero-photos { width: 200px; height: 220px; } .hero-photo { width: 105px; height: 105px; } #education .tl-role { font-size: 15px; } .hero-bio-para, .hero-bio-points { max-width: 100%; } .hero-text { width: 100%; min-width: 0; } }
 </style>
 </head>
 <body>
@@ -162,7 +159,7 @@
     <li><a href="#responsibility">Extracurriculars</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="nav-burger" id="navBurger" aria-label="Menu">
+  <button class="nav-burger" id="navBurger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -394,21 +391,19 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // Mobile hamburger menu
-  const navBurger = document.getElementById('navBurger');
-  const navPanel = document.getElementById('navMobilePanel');
-  if (navBurger && navPanel) {
-    navBurger.addEventListener('click', () => {
-      navBurger.classList.toggle('open');
-      navPanel.classList.toggle('open');
+  // Mobile hamburger
+  const burger = document.getElementById('navBurger');
+  const panel = document.getElementById('navMobilePanel');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    panel.classList.toggle('open');
+  });
+  panel.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      burger.classList.remove('open');
+      panel.classList.remove('open');
     });
-    navPanel.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navBurger.classList.remove('open');
-        navPanel.classList.remove('open');
-      });
-    });
-  }
+  });
 </script>
 </body>
 </html>
