@@ -342,25 +342,37 @@
   .pub-title a:hover { text-decoration: underline; color: var(--copper); }
 
   /* SQUIGGLY UNDERLINE */
-  .squiggle-wrap {
+  .circle-wrap {
     position: relative;
     display: inline;
   }
-  .squiggle-wrap svg {
+  .circle-wrap svg {
     position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 100%;
-    height: 8px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 26px);
+    height: calc(100% + 22px);
     overflow: visible;
     pointer-events: none;
   }
-  .squiggle-wrap svg path {
+  .circle-wrap svg path {
     fill: none;
     stroke: url(#glitter-gradient);
     stroke-width: 2.5;
     stroke-linecap: round;
     stroke-linejoin: round;
+  }
+  .circle-wrap svg path.draw-loop {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: circle-draw-loop 3.5s ease-in-out infinite;
+  }
+  @keyframes circle-draw-loop {
+    0% { stroke-dashoffset: 1000; opacity: 0; }
+    8% { opacity: 1; }
+    50% { stroke-dashoffset: 0; }
+    85% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: -1000; opacity: 0; }
   }
 
   /* TOOLTIP */
@@ -476,7 +488,7 @@
     <div class="timeline">
       <div class="timeline-item fade-in">
         <p class="tl-period">2022 – 2026</p>
-        <p class="tl-role">Bachelor of Technology in <span class="squiggle-wrap">Information and Communication Technology<span class="tooltip" style="position:absolute;inset:0;"><span class="tooltip-box">An interdisciplinary program whose curriculum is a mix of core ECE and CS subjects. Students (aka me) have the added advantage of knowing both the software as well as hardware tech stack. </span></span><svg viewBox="0 0 340 8" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><defs><linearGradient id="glitter-gradient" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F472B6"/><stop offset="25%" stop-color="#EC4899"/><stop offset="50%" stop-color="#F9A8D4"/><stop offset="75%" stop-color="#DB2777"/><stop offset="100%" stop-color="#F472B6"/></linearGradient></defs><path d="M0 5 Q10 1 20 5 Q30 9 40 5 Q50 1 60 5 Q70 9 80 5 Q90 1 100 5 Q110 9 120 5 Q130 1 140 5 Q150 9 160 5 Q170 1 180 5 Q190 9 200 5 Q210 1 220 5 Q230 9 240 5 Q250 1 260 5 Q270 9 280 5 Q290 1 300 5 Q310 9 320 5 Q330 1 340 5"/></svg></span></p>
+        <p class="tl-role">Bachelor of Technology in <span class="circle-wrap">Information and Communication Technology<span class="tooltip" style="position:absolute;inset:0;"><span class="tooltip-box">An interdisciplinary program whose curriculum is a mix of core ECE and CS subjects. Students (aka me) have the added advantage of knowing both the software as well as hardware tech stack. </span></span><svg viewBox="0 0 380 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><defs><linearGradient id="glitter-gradient" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F472B6"/><stop offset="25%" stop-color="#EC4899"/><stop offset="50%" stop-color="#F9A8D4"/><stop offset="75%" stop-color="#DB2777"/><stop offset="100%" stop-color="#F472B6"/></linearGradient></defs><path class="draw-loop" d="M24 32 C16 12, 70 2, 150 3 C230 4, 330 1, 360 12 C378 19, 372 30, 358 36 C340 44, 260 52, 170 54 C90 56, 24 52, 10 40 C2 33, 8 20, 28 14 C70 1, 200 0, 280 4 C330 7, 368 14, 374 26" /></svg></span></p>
         <p class="tl-org">Pandit Deendayal Energy University (PDEU) · Gandhinagar, India</p>
         <p class="tl-indent">Minor in Robotics · CGPA 9.0 / 10</p>
         <p class="tl-indent">Relevant coursework: Radio Frequency Engineering, Analog Circuit Design, Digital CMOS VLSI Design, Digital Logic Design, Computer Organization & Design, Theory of Automata and Computation, Operating System, Digital Communication, Microprocessor & Embedded Systems, Internet of Things, Digital Signal Processing, Deep Reinforcement Learning, Software Engineering & Project Management, Mechanics of Robotics.</p>
