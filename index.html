@@ -94,7 +94,7 @@
   .hero-inner {
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 2.5rem;
   }
   .hero-text { flex: 1; }
   .hero-photos {
@@ -136,7 +136,7 @@
   }
   .photo-flip-back {
     transform: rotateY(180deg);
-    background: var(--ink);
+    background: linear-gradient(135deg, #F472B6, #EC4899);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -497,19 +497,19 @@
         <div class="photo-flip">
           <div class="photo-flip-inner">
             <div class="photo-flip-front"><img src="photo.jpg" alt="Meera Prajapati"/></div>
-            <div class="photo-flip-back"><p>MAPCON 2025</p></div>
+            <div class="photo-flip-back"><p>Placeholder text — swap me for something fun ✨</p></div>
           </div>
         </div>
         <div class="photo-flip">
           <div class="photo-flip-inner">
             <div class="photo-flip-front"><img src="photo2.jpg" alt="Meera Prajapati"/></div>
-            <div class="photo-flip-back"><p>Yes, that was intentional.</p></div>
+            <div class="photo-flip-back"><p>Placeholder text — swap me for something fun ✨</p></div>
           </div>
         </div>
         <div class="photo-flip">
           <div class="photo-flip-inner">
             <div class="photo-flip-front"><img src="photo3.jpeg" alt="Meera Prajapati"/></div>
-            <div class="photo-flip-back"><p> IIT Kanpur 2025 - arguably the time when I grew the most in a very short span of time.</p></div>
+            <div class="photo-flip-back"><p>Placeholder text — swap me for something fun ✨</p></div>
           </div>
         </div>
       </div>
@@ -776,6 +776,43 @@ in X and Ku-band.</li>
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Pixie dust / glitter cursor trail
+  const glitterColors = ['#F472B6', '#EC4899', '#F9A8D4', '#FBCFE8', '#C07D3A'];
+  let lastSpark = 0;
+  document.addEventListener('mousemove', (e) => {
+    const now = Date.now();
+    if (now - lastSpark < 35) return;
+    lastSpark = now;
+
+    const sparkle = document.createElement('div');
+    const size = 4 + Math.random() * 4;
+    const color = glitterColors[Math.floor(Math.random() * glitterColors.length)];
+    sparkle.style.cssText = `
+      position: fixed;
+      left: ${e.clientX + (Math.random() * 16 - 8)}px;
+      top: ${e.clientY + (Math.random() * 16 - 8)}px;
+      width: ${size}px;
+      height: ${size}px;
+      background: ${color};
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      box-shadow: 0 0 6px ${color};
+      animation: sparkle-fade 0.7s ease-out forwards;
+    `;
+    document.body.appendChild(sparkle);
+    setTimeout(() => sparkle.remove(), 700);
+  });
+
+  const sparkleStyle = document.createElement('style');
+  sparkleStyle.textContent = `
+    @keyframes sparkle-fade {
+      0% { opacity: 1; transform: scale(1) translateY(0); }
+      100% { opacity: 0; transform: scale(0.3) translateY(-12px); }
+    }
+  `;
+  document.head.appendChild(sparkleStyle);
 </script>
 </body>
 </html>
