@@ -346,7 +346,7 @@
     position: relative;
     display: inline-block;
   }
-  .circle-wrap svg {
+  .circle-wrap svg.circle-svg {
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
@@ -354,15 +354,16 @@
     height: calc(100% + 22px);
     overflow: visible;
     pointer-events: none;
+    display: block;
   }
-  .circle-wrap svg path {
+  .circle-svg path {
     fill: none;
     stroke: url(#glitter-gradient);
     stroke-width: 2.5;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
-  .circle-wrap svg path.draw-loop {
+  .circle-svg path.draw-loop {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
     animation: circle-draw-loop 3.5s ease-in-out infinite;
@@ -375,10 +376,16 @@
     100% { stroke-dashoffset: -1000; opacity: 0; }
   }
 
-  /* Desktop circle: shown by default, hidden on mobile */
-  .circle-wrap svg.circle-svg { display: block; }
-  .circle-wrap svg.squiggle-svg { display: none; }
-
+  .circle-wrap svg.squiggle-svg {
+    display: none;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    overflow: visible;
+    pointer-events: none;
+  }
   .squiggle-svg path {
     fill: none;
     stroke: url(#glitter-gradient-mobile);
@@ -389,18 +396,7 @@
 
   @media (max-width: 600px) {
     .circle-wrap svg.circle-svg { display: none; }
-    .circle-wrap svg.squiggle-svg {
-      display: block !important;
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      top: auto;
-      transform: none;
-      width: 100%;
-      height: 8px;
-      overflow: visible;
-      pointer-events: none;
-    }
+    .circle-wrap svg.squiggle-svg { display: block; }
   }
 
   /* TOOLTIP */
