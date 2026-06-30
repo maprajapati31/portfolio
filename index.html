@@ -115,7 +115,7 @@
   .achievement-list li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; border-radius: 50%; background: var(--copper); }
   .achievement-title { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
   .achievement-sub { font-size: 13px; color: var(--ink-light); }
-  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5px; border: 1.5px solid var(--border); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr)); gap: 1.5px; border: 1.5px solid var(--border); }
   .project-card { padding: 1.75rem; border: 1.5px solid var(--border); margin: -1.5px; transition: background 0.2s; }
   .project-card:hover { background: var(--copper-light); }
   .project-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.6rem; }
